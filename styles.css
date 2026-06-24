@@ -501,3 +501,36 @@ a{ color: inherit; }
   .hero{ padding: 100px 18px 70px; }
   .meta-grid{ grid-template-columns: 1fr 1fr; }
 }
+.download-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:10px;
+  padding: 60px 28px 70px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.download-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color: #18222B;
+  text-decoration:none;
+  background: #FBF8F0;
+  border: 1px solid #18222B;
+  border-radius: 100px;
+  padding: 12px 22px;
+  transition: background 150ms, color 150ms;
+}
+.download-link:hover{ background: #18222B; color: #F6F1E6; }
+.download-caption{
+  font-size: 0.85rem;
+  color: #4B5660;
+  margin:0;
+}
