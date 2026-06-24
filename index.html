@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>El impacto de las apuestas en la mente joven — Informe estadístico</title>
+<meta name="description" content="Hábitos de apuesta, percepción de riesgo y ansiedad en jóvenes apostadores. Trabajo Práctico de Estadística Descriptiva." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav class="masthead-nav" id="mastheadNav">
+  <span class="nav-mark">A.J.</span>
+  <span class="nav-section" id="navSection">Introducción</span>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir índice">índice</button>
+</nav>
+
+<div class="toc-panel" id="tocPanel">
+  <a href="#intro" data-label="01 Introducción">01 — Introducción</a>
+  <a href="#metodologia" data-label="02 Metodología">02 — Metodología</a>
+  <a href="#perfil" data-label="03 Quién apuesta">03 — Quién apuesta</a>
+  <a href="#edad" data-label="03 Edad y trayectoria">· Edad y trayectoria</a>
+  <a href="#dinero" data-label="03 El dinero en juego">· El dinero en juego</a>
+  <a href="#mente" data-label="03 Tiempo y mente">· Tiempo y mente</a>
+  <a href="#cruce" data-label="03 Ansiedad y gasto">· Ansiedad y gasto</a>
+  <a href="#conclusiones" data-label="04 Conclusiones">04 — Conclusiones</a>
+  <a href="#bibliografia" data-label="05 Bibliografía">05 — Bibliografía</a>
+</div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Trabajo Práctico de Estadística Descriptiva — Análisis de Sistemas</p>
+      <h1 class="hero-title">El impacto de las<br><em>apuestas</em> en la<br>mente joven</h1>
+      <p class="hero-sub">Hábitos de apuesta, percepción de riesgo y ansiedad en jóvenes apostadores de entre 17 y 27 años.</p>
+      <p class="hero-byline">Antonella Alessandro · Uziel Mujica</p>
+
+      <div class="ticket-row hero-tickets">
+        <div class="ticket">
+          <span class="ticket-num">30</span>
+          <span class="ticket-label">encuestados</span>
+        </div>
+        <div class="ticket">
+          <span class="ticket-num">17–27</span>
+          <span class="ticket-label">años</span>
+        </div>
+        <div class="ticket">
+          <span class="ticket-num">66,7%</span>
+          <span class="ticket-label">apuesta deportiva</span>
+        </div>
+        <div class="ticket ticket-rust">
+          <span class="ticket-num">73,3%</span>
+          <span class="ticket-label">intentó dejar de apostar</span>
+        </div>
+      </div>
+    </div>
+    <button class="scroll-cue" id="scrollCue" aria-label="Bajar">leer el informe ↓</button>
+  </header>
+
+  <!-- ============ 01 INTRODUCCIÓN ============ -->
+  <section class="section section-text" id="intro">
+    <div class="section-head">
+      <span class="section-number">01</span>
+      <h2>Introducción</h2>
+    </div>
+
+    <div class="prose">
+      <p class="lede">Apostar dejó de ser una actividad exclusiva de los casinos físicos para estar al alcance de un clic en el celular. Impulsada por la tecnología, la pandemia y campañas de marketing cada vez más agresivas, esta normalización tiene un impacto directo en nuestro entorno: es cada vez más común escuchar a amigos o conocidos hablar de cuotas deportivas, ganancias rápidas y, también, de pérdidas de dinero significativas.</p>
+
+      <p>Elegimos este tema porque nos interesa entender cómo una práctica que para algunos jóvenes puede convertirse en una adicción se fue normalizando en nuestra propia generación. No se trata de una curiosidad menor: la actualidad del fenómeno está respaldada por datos recientes.</p>
+
+      <div class="stat-callout">
+        <p><strong>6 de cada 10</strong> adolescentes argentinos están expuestos a las apuestas y <strong>1 de cada 6</strong> ya apostó alguna vez, según el Observatorio Humanitario de Cruz Roja Argentina (relevamiento sobre más de 11.000 estudiantes secundarios, diciembre de 2025).</p>
+      </div>
+
+      <p>En la misma línea, UNICEF Argentina reportó en su informe <em>Kids Online Argentina</em> (2025) que uno de cada cuatro adolescentes apostó alguna vez, y que la edad de inicio se ubica alrededor de los 13 años, sobre todo entre varones.</p>
+
+      <p>El objetivo de esta encuesta es conocer, describir y analizar los hábitos, pensamientos y comportamientos de jóvenes apostadores, y cruzarlos con dos variables más subjetivas: el nivel de ansiedad que les genera apostar y cómo perciben el riesgo de las apuestas online para los jóvenes en general. La pregunta de fondo: ¿los que más apuestan, en plata y en tiempo, son también los más afectados a nivel psicológico?</p>
+
+      <p>La encuesta está dirigida específicamente a <strong>jóvenes que apuestan o apostaron en el último tiempo</strong>, de entre 17 y 27 años. El interés está puesto en describir en profundidad a ese grupo, no en compararlo contra quienes no apuestan.</p>
+
+      <p>Las plataformas de apuestas auspician a los clubes de fútbol más grandes, aparecen en cada transmisión deportiva y son promocionadas por influencers en redes sociales. Muchos jóvenes ingresan a este mundo buscando adrenalina o un ingreso extra fácil, y terminan desarrollando dependencias que comprometen su economía, su salud mental y su desarrollo personal. Analizar estos datos estadísticamente permite dimensionar el problema y dejar de tratarlo como un simple "juego".</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 METODOLOGÍA ============ -->
+  <section class="section section-text" id="metodologia">
+    <div class="section-head">
+      <span class="section-number">02</span>
+      <h2>Metodología</h2>
+    </div>
+
+    <div class="prose">
+      <p>La recolección se realizó mediante una <strong>encuesta anónima autoadministrada</strong> (Google Forms), distribuida entre amigos, compañeros, familia y conocidos que cumplían un único requisito de entrada: haber apostado dinero alguna vez en juegos de azar o apuestas — deportivas, casino online, loterías, cartas/póker, etc.</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-card">
+        <span class="meta-kicker">Muestra</span>
+        <span class="meta-value">30<span class="meta-unit">personas</span></span>
+        <p>Cumple el mínimo exigido por la consigna.</p>
+      </div>
+      <div class="meta-card">
+        <span class="meta-kicker">Cuestionario</span>
+        <span class="meta-value">12<span class="meta-unit">preguntas</span></span>
+        <p>5 variables cualitativas + 7 cuantitativas, más una pregunta abierta opcional.</p>
+      </div>
+      <div class="meta-card">
+        <span class="meta-kicker">Tipo de muestreo</span>
+        <span class="meta-value-text">No probabilístico, intencional</span>
+        <p>Se buscó deliberadamente a personas que cumplieran la condición de apostar.</p>
+      </div>
+      <div class="meta-card">
+        <span class="meta-kicker">Alcance de la inferencia</span>
+        <span class="meta-value-text">No generalizable</span>
+        <p>Los resultados describen a este grupo, no a "todos los jóvenes".</p>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Durante la carga de datos surgieron dificultades típicas de un formulario de respuesta libre: antigüedad y gasto escritos en formatos no numéricos ("1 año y medio", "30mil", "500k", "no sé"), y horas semanales con unidades mezcladas ("2 horas", "1hs", "1/2 horas", "ninguna"). Se estandarizaron esas respuestas y los casos sin dato numérico recuperable se trataron como datos faltantes — por eso el tamaño de muestra efectivo (n) varía levemente entre variables, de 28 a 30 casos.</p>
+    </div>
+  </section>
+
+  <!-- ============ 03 QUIÉN APUESTA ============ -->
+  <section class="section" id="perfil">
+    <div class="section-head">
+      <span class="section-number">03</span>
+      <h2>Análisis de los datos</h2>
+      <p class="section-sub">Quién apuesta</p>
+    </div>
+
+    <div class="prose">
+      <p>La muestra quedó compuesta mayoritariamente por varones y por personas con algún vínculo con el estudio. Las apuestas deportivas dominan ampliamente como modalidad elegida, muy por encima de cualquier otra alternativa.</p>
+    </div>
+
+    <div class="chart-grid two-col">
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Gráfico circular</span>
+          <h3>Género de la muestra</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap chart-canvas-wrap--small"><canvas id="chartGenero"></canvas></div>
+        <p class="chart-note">22 hombres (73,3%) y 8 mujeres (26,7%). Consistente con estudios nacionales que señalan mayor frecuencia de apuesta entre varones (Opina Argentina, 2024).</p>
+      </figure>
+
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Diagrama de barras</span>
+          <h3>Ocupación</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap chart-canvas-wrap--small"><canvas id="chartOcupacion"></canvas></div>
+        <p class="chart-note">Más del 80% de la muestra tiene algún vínculo con el estudio: 14 son sólo estudiantes, 11 estudian y trabajan, y 5 son exclusivamente trabajadores.</p>
+      </figure>
+    </div>
+
+    <figure class="chart-card chart-card--full">
+      <figcaption>
+        <span class="chart-kicker">Diagrama de Pareto</span>
+        <h3>Tipo de apuesta más frecuente</h3>
+      </figcaption>
+      <div class="chart-canvas-wrap"><canvas id="chartTipo"></canvas></div>
+      <p class="chart-note">Las apuestas deportivas concentran el 66,7% de la muestra; sumadas al casino online (23,3%) explican el 90% del total. Cartas/póker, loterías y otras modalidades reúnen, entre las tres, apenas el 10% restante — la línea de frecuencia acumulada lo deja claro.</p>
+    </figure>
+  </section>
+
+  <!-- ============ EDAD Y TRAYECTORIA ============ -->
+  <section class="section" id="edad">
+    <div class="section-head section-head--sub">
+      <h2>Edad y trayectoria</h2>
+    </div>
+
+    <div class="prose">
+      <p>La edad osciló entre 17 y 27 años, con media y mediana prácticamente iguales (22,1 y 22 años), lo que indica una distribución simétrica, sin sesgo marcado hacia ningún extremo. El 50% central de la muestra (Q1–Q3) tiene entre 20 y 24 años: una franja claramente universitaria.</p>
+    </div>
+
+    <div class="chart-grid two-col">
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Histograma</span>
+          <h3>Distribución de edades</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chartEdad"></canvas></div>
+      </figure>
+
+      <div class="stat-block">
+        <div class="stat-block-row"><span>n</span><strong>30</strong></div>
+        <div class="stat-block-row"><span>Media</span><strong>22,07 años</strong></div>
+        <div class="stat-block-row"><span>Mediana</span><strong>22 años</strong></div>
+        <div class="stat-block-row"><span>Moda</span><strong>22 años</strong></div>
+        <div class="stat-block-row"><span>Q1 — Q3</span><strong>20 — 24</strong></div>
+        <div class="stat-block-row"><span>Desvío estándar</span><strong>2,48</strong></div>
+        <div class="stat-block-row stat-block-row--cv"><span>Coef. de variación</span><strong>11,2%</strong></div>
+      </div>
+    </div>
+
+    <div class="callout callout--rust">
+      <p><strong>Un punto de alerta:</strong> el encuestado más joven tiene 17 años, y hay dos de 18 — edades en las que apostar está prohibido para menores en Argentina. Uno de los casos de 18 años reportó, además, el segundo gasto mensual más alto de toda la muestra ($500.000) junto con el nivel máximo de ansiedad (5/5): un combo preocupante en alguien que legalmente no debería estar apostando.</p>
+    </div>
+
+    <div class="chart-grid two-col" style="margin-top:3rem">
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Histograma</span>
+          <h3>Antigüedad apostando (meses)</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chartAntiguedad"></canvas></div>
+        <p class="chart-note">n=28 (2 sin dato). Media 21,5 y mediana 21 meses — bastante simétrica, pero con un desvío relativo del 73,2%: convive gente que empezó hace 1 mes con otra que apuesta desde hace 5 años.</p>
+      </figure>
+
+      <div class="stat-block">
+        <div class="stat-block-row"><span>n</span><strong>28</strong></div>
+        <div class="stat-block-row"><span>Media</span><strong>21,5 meses</strong></div>
+        <div class="stat-block-row"><span>Mediana</span><strong>21 meses</strong></div>
+        <div class="stat-block-row"><span>Moda</span><strong>24 meses</strong></div>
+        <div class="stat-block-row"><span>Mínimo — Máximo</span><strong>1 — 60</strong></div>
+        <div class="stat-block-row"><span>Desvío estándar</span><strong>15,74</strong></div>
+        <div class="stat-block-row stat-block-row--cv"><span>Coef. de variación</span><strong>73,2%</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL DINERO EN JUEGO ============ -->
+  <section class="section" id="dinero">
+    <div class="section-head section-head--sub">
+      <h2>El dinero en juego</h2>
+    </div>
+
+    <div class="prose">
+      <p>El gasto mensual es, por lejos, la variable más heterogénea de toda la encuesta. Su media ($169.828) supera ampliamente a su mediana ($100.000) y a su moda ($100.000): la relación <strong>media &gt; mediana ≥ moda</strong> confirma una distribución asimétrica hacia la derecha. La mayoría gasta montos moderados o bajos, pero un subgrupo minoritario gasta muchísimo más y arrastra el promedio hacia arriba.</p>
+    </div>
+
+    <div class="chart-grid two-col">
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Histograma</span>
+          <h3>Gasto mensual en apuestas</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chartGasto"></canvas></div>
+        <p class="chart-note">n=29 (1 sin dato). El 44,8% gasta menos de $100.000 mensuales; sólo un 13,8% gasta entre $500.000 y $600.000.</p>
+      </figure>
+
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Diagrama de caja y bigotes</span>
+          <h3>Gasto mensual — valores atípicos</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap chart-canvas-wrap--box" id="boxplotGasto"></div>
+        <p class="chart-note">Pasá el cursor por los puntos. Aplicando la regla del rango intercuartílico, los dos casos de $600.000 quedan identificados como valores atípicos — altos pero plausibles dentro del fenómeno, por lo que se mantuvieron en el análisis.</p>
+      </figure>
+    </div>
+
+    <figure class="chart-card chart-card--full">
+      <figcaption>
+        <span class="chart-kicker">Diagrama de barras comparativo</span>
+        <h3>Coeficiente de variación por variable</h3>
+      </figcaption>
+      <div class="chart-canvas-wrap"><canvas id="chartCV"></canvas></div>
+      <p class="chart-note">El gasto mensual (109,6%) y las horas semanales (149,9%) tienen, por lejos, la mayor dispersión relativa de toda la encuesta. La edad (11,2%) es la variable más homogénea: casi todos están "cerca" del promedio.</p>
+    </figure>
+  </section>
+
+  <!-- ============ TIEMPO Y MENTE ============ -->
+  <section class="section" id="mente">
+    <div class="section-head section-head--sub">
+      <h2>Tiempo y mente</h2>
+    </div>
+
+    <div class="prose">
+      <p>Las horas semanales dedicadas a apostar (o a pensar en apuestas) muestran un patrón similar al del gasto: una mediana baja, de 3 horas, pero con un caso extremo de 48 horas semanales — prácticamente todo el tiempo libre de una semana — que dispara la media a 5,9 horas y el coeficiente de variación al 149,9%, el más alto de toda la encuesta. Si se excluye ese único caso, la media baja a 4,5 horas, mucho más representativa del resto del grupo.</p>
+    </div>
+
+    <div class="chart-grid two-col">
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Histograma</span>
+          <h3>Horas semanales dedicadas</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chartHoras"></canvas></div>
+        <p class="chart-note">n=29 — excluye el valor atípico de 48 hs/semana, tratado aparte (ver nota). El 37,9% dedica menos de 3 horas semanales.</p>
+      </figure>
+
+      <div class="stack-mini">
+        <figure class="chart-card chart-card--mini">
+          <figcaption>
+            <span class="chart-kicker">Escala 1–5</span>
+            <h3>Ansiedad / preocupación autopercibida</h3>
+          </figcaption>
+          <div class="chart-canvas-wrap chart-canvas-wrap--mini"><canvas id="chartAnsiedad"></canvas></div>
+          <p class="chart-note">Media 2,57, mediana 2, moda 1. Media &gt; mediana &gt; moda: sesgo a la derecha — la mayoría reporta poca ansiedad, pero hay una cola de 16,7% que marcó el máximo.</p>
+        </figure>
+
+        <figure class="chart-card chart-card--mini">
+          <figcaption>
+            <span class="chart-kicker">Escala 1–5</span>
+            <h3>Riesgo percibido de las apuestas online</h3>
+          </figcaption>
+          <div class="chart-canvas-wrap chart-canvas-wrap--mini"><canvas id="chartRiesgo"></canvas></div>
+          <p class="chart-note">Media 3,73, mediana y moda en 4. La mayoría considera que las apuestas online sí son riesgosas para los jóvenes — incluso quienes apuestan.</p>
+        </figure>
+      </div>
+    </div>
+
+    <div class="chart-grid three-col" style="margin-top:3rem">
+      <figure class="chart-card chart-card--mini">
+        <figcaption>
+          <span class="chart-kicker">Gráfico circular</span>
+          <h3>¿Intentaste dejar de apostar?</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap chart-canvas-wrap--small"><canvas id="chartIntento"></canvas></div>
+      </figure>
+      <figure class="chart-card chart-card--mini">
+        <figcaption>
+          <span class="chart-kicker">Gráfico circular</span>
+          <h3>¿Conocés a alguien con problemas serios?</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap chart-canvas-wrap--small"><canvas id="chartConoce"></canvas></div>
+      </figure>
+      <figure class="chart-card chart-card--mini">
+        <figcaption>
+          <span class="chart-kicker">Diagrama de barras</span>
+          <h3>¿Sentís que afectó tu vida?</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap chart-canvas-wrap--small"><canvas id="chartAfecto"></canvas></div>
+      </figure>
+    </div>
+
+    <div class="prose">
+      <p>El 73,3% admitió haber intentado alguna vez reducir o dejar de apostar, y la mitad conoce a alguien cercano con problemas serios por las apuestas. Aun así, el 60% considera que las apuestas no afectaron su vida y sólo un 6,7% reconoció abiertamente un impacto negativo en sus estudios, trabajo o relaciones — una brecha llamativa entre el comportamiento (intentar dejar) y la autopercepción del daño.</p>
+    </div>
+  </section>
+
+  <!-- ============ CRUCE: ANSIEDAD Y GASTO ============ -->
+  <section class="section" id="cruce">
+    <div class="section-head section-head--sub">
+      <h2>Cuando la ansiedad sube, el gasto sube</h2>
+    </div>
+
+    <div class="prose">
+      <p>Dividimos a la muestra en dos grupos según su nivel de ansiedad autopercibida — bajo (1–2) y alto (3–5) — y comparamos cuánto gastan y cuántas horas semanales dedican a apostar. El cruce sugiere que la ansiedad no aparece distribuida al azar: tiende a concentrarse en quienes más plata y más tiempo invierten en apostar.</p>
+    </div>
+
+    <div class="chart-grid two-col">
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Barras comparativas</span>
+          <h3>Gasto mensual promedio según ansiedad</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chartCruceGasto"></canvas></div>
+        <p class="chart-note">El grupo de ansiedad alta gasta, en promedio, 3,4 veces más que el grupo de ansiedad baja.</p>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>
+          <span class="chart-kicker">Barras comparativas</span>
+          <h3>Horas semanales promedio según ansiedad</h3>
+        </figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chartCruceHoras"></canvas></div>
+        <p class="chart-note">El grupo de ansiedad alta dedica, en promedio, 3,5 veces más horas semanales que el grupo de ansiedad baja.</p>
+      </figure>
+    </div>
+
+    <figure class="chart-card chart-card--full">
+      <figcaption>
+        <span class="chart-kicker">Diagrama de dispersión</span>
+        <h3>Gasto mensual, ansiedad y horas semanales — cada punto es un encuestado</h3>
+      </figcaption>
+      <div class="chart-canvas-wrap chart-canvas-wrap--tall"><canvas id="chartScatter"></canvas></div>
+      <p class="chart-note">Eje X: gasto mensual. Eje Y: nivel de ansiedad (1–5, con leve dispersión visual para evitar superposición). Tamaño del punto: horas semanales dedicadas. Pasá el cursor por cada punto para ver el detalle del encuestado.</p>
+    </figure>
+
+    <div class="quote-grid">
+      <blockquote class="quote-ticket">
+        <p>"El aburrimiento durante la pandemia y la facilidad de acceso de los casinos online."</p>
+        <cite>Encuestado #5</cite>
+      </blockquote>
+      <blockquote class="quote-ticket">
+        <p>"Publicidades hechas por influencers."</p>
+        <cite>Encuestada #25</cite>
+      </blockquote>
+      <blockquote class="quote-ticket quote-ticket--rust">
+        <p>"Aburrimiento — después se volvió dependencia."</p>
+        <cite>Encuestado #26</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ 04 CONCLUSIONES ============ -->
+  <section class="section section-text" id="conclusiones">
+    <div class="section-head">
+      <span class="section-number">04</span>
+      <h2>Conclusiones</h2>
+    </div>
+
+    <div class="prose">
+      <p class="lede">El perfil que emerge de esta muestra de 30 jóvenes apostadores es el de un grupo mayoritariamente masculino y estudiantil, de entre 20 y 24 años en su núcleo central, donde las apuestas deportivas dominan claramente sobre cualquier otra modalidad.</p>
+
+      <p>Pero el dato más relevante no es ese perfil promedio, sino la enorme <strong>heterogeneidad interna</strong> del grupo. Mientras la edad y la antigüedad apostando se distribuyen de forma bastante simétrica, el gasto mensual y las horas dedicadas están fuertemente sesgados a la derecha y muestran los coeficientes de variación más altos de toda la encuesta (109,6% y 149,9% respectivamente). Conviven en este grupo apostadores ocasionales de bajo gasto con un subgrupo minoritario, pero significativo, que apuesta sumas y tiempos muy por encima del resto.</p>
+
+      <p>La relación entre ansiedad y comportamiento de apuesta fue el hallazgo que más nos llamó la atención: existe una correlación marcada entre el gasto mensual y el nivel de ansiedad autopercibido. Esto refuerza la idea de que el componente económico — no sólo el tiempo dedicado — está directamente asociado al malestar psicológico que las apuestas generan en quienes más apuestan.</p>
+
+      <p>Las respuestas abiertas sobre el motivo para empezar a apostar ilustran bien esta heterogeneidad de motivaciones: mientras algunos mencionan el aburrimiento durante la pandemia y la facilidad de acceso de los casinos online, otros hablan directamente de que "después se volvió dependencia", o de publicidades de influencers como puerta de entrada. Estas frases coinciden con lo que señalan Branz y Murzi (UNSAM-CONICET, 2024) sobre cómo las apuestas online introducen el cálculo económico en espacios antes puramente sociales, como ver un partido con amigos.</p>
+
+      <h3 class="prose-h3">Limitaciones</h3>
+      <ul class="prose-list">
+        <li>Al tratarse de una muestra no probabilística de sólo 30 casos, los resultados no son generalizables más allá de este grupo específico.</li>
+        <li>La muestra incluyó a un menor de edad (17 años) y a dos jóvenes de 18, edades en las que apostar es ilegal en Argentina — algo que no se previó al diseñar el cuestionario.</li>
+        <li>Varias respuestas llegaron en formatos de texto libre poco estandarizados (antigüedad, gasto y horas), lo que obligó a estandarizar y, en algunos casos, descartar datos.</li>
+      </ul>
+
+      <h3 class="prose-h3">Para seguir investigando</h3>
+      <p>Sería interesante repetir esta encuesta con una muestra más grande y estratificada por edad, para ver si la relación entre ansiedad y gasto se mantiene igual de fuerte entre menores de 18 años que entre adultos jóvenes.</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 BIBLIOGRAFÍA ============ -->
+  <section class="section section-text" id="bibliografia">
+    <div class="section-head">
+      <span class="section-number">05</span>
+      <h2>Bibliografía</h2>
+    </div>
+    <ol class="biblio-list" id="biblioList"></ol>
+  </section>
+
+  <footer class="site-footer">
+    <p>El impacto de las apuestas en la mente joven — Trabajo Práctico de Estadística Descriptiva.</p>
+    <p>Antonella Alessandro · Uziel Mujica — ACT5AP</p>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
